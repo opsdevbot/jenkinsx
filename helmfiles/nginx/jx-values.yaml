@@ -18,7 +18,7 @@ jx:
       username: jenkins-x-labs-bot
 jxRequirements:
   autoUpdate:
-    enabled: true
+    enabled: false
     schedule: ""
   cluster:
     chartKind: pages
@@ -36,7 +36,7 @@ jxRequirements:
   - key: dev
   - key: staging
   ingress:
-    domain: nip.io
+    domain: change.me
     ignoreLoadBalancer: true
     kind: ingress
     namespaceSubDomain: .nginx.
