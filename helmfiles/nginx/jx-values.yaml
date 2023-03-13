@@ -18,7 +18,7 @@ jx:
       username: jenkins-x-labs-bot
 jxRequirements:
   autoUpdate:
-    enabled: false
+    enabled: true
     schedule: ""
   cluster:
     chartKind: pages
