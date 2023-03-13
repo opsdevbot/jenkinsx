@@ -6,6 +6,10 @@ data:
       repos:
       - opsdevbot/jenkinsx
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - opsdevbot/py-http
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -21,6 +25,11 @@ data:
         name: cd-indicators
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
         name: lighthouse-webui-plugin
+      opsdevbot/py-http:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
     heart: {}
     label:
       additional_labels: null
@@ -28,6 +37,20 @@ data:
     plugins:
       opsdevbot/jenkinsx:
       - config-updater
+      - approve
+      - assign
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - cat
+      - dog
+      - pony
+      opsdevbot/py-http:
       - approve
       - assign
       - help
@@ -53,6 +76,11 @@ data:
     - repos:
       - opsdevbot/jenkinsx
       trusted_org: opsdevbot
+    - repos:
+      - opsdevbot/py-http
+      trusted_org: opsdevbot
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null

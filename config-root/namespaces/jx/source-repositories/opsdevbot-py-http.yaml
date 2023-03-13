@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: opsdevbot
+    provider: github
+    repository: py-http
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: opsdevbot-py-http
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/opsdevbot/py-http.git
+  org: opsdevbot
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: py-http
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/opsdevbot/py-http
