@@ -36,7 +36,7 @@ jxRequirements:
   - key: dev
   - key: staging
   ingress:
-    domain: change.me
+    domain: nip.io
     ignoreLoadBalancer: true
     kind: ingress
     namespaceSubDomain: .nginx.
